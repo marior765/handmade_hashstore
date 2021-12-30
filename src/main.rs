@@ -10,7 +10,7 @@ use std::mem;
 use std::fmt::Display;
 // use std::cmp::Ordering;
 
-// const initial_ver: &'static str = "0.1";
+const initial_ver: &'static str = "0.1";
 
 pub struct Store<K, V> 
         where for<'a> K: Hash + Eq + Clone + PartialOrd + Display, 
@@ -41,7 +41,7 @@ impl<K, V> Store<K, V>
 
     fn increase_ver(&mut self) -> K {
         if self.head == None {
-            let new_ver = K::from("0.1".to_string());
+            let new_ver = K::from(initial_ver.to_string());
             self.head = Some(new_ver);
         } else {
             let current_head = self.head.as_ref().unwrap();
