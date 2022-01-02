@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use rtest::store::{Store, Core};
+    use rtest::store::*;
 
     #[test]
     fn test_init() {
